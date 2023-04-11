@@ -16,8 +16,10 @@ const Navbar = () => {
                             <li><Link to="/blog">Blog</Link></li>
                         </ul>
                     </div>
-                    <h1 className="normal-case text-2xl border-0 bg font-bold">HotJob</h1>
-
+                    <Link to="/">
+                        <img className='w-20' src="/public/hotjobs.jpg" alt="" />
+                        </Link>
+                        {/* <h1 className="normal-case text-2xl border-0 bg font-bold">HotJob</h1> */}
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
