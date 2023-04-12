@@ -12,19 +12,19 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to="/statistics">Statistics</Link></li>
-                            <li><Link to="/appliedjobs">Applied Jobs</Link></li>
+                            <li><Link to="/jobs">Applied Jobs</Link></li>
                             <li><Link to="/blog">Blog</Link></li>
                         </ul>
                     </div>
                     <Link to="/">
-                        <img className='w-20 hover:scale-95 duration-100' src="/public/hotjobs.jpg" alt="" />
+                        <img className='w-20 hover:scale-95 duration-100' src="/hotjobs.jpg" alt="" />
                         </Link>
                         {/* <h1 className="normal-case text-2xl border-0 bg font-bold">HotJob</h1> */}
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="/statistics">Statistics</Link></li>
-                        <li><Link to="/appliedjobs">Applied Jobs</Link></li>
+                        <li><Link to="/jobs">Applied Jobs</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
                     </ul>
                 </div>
