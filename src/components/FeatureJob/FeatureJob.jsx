@@ -1,18 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import SingleFeature from '../singleFeature/SingleFeature';
+import { json } from 'react-router-dom';
 
 const FeatureJob = () => {
     const [features, setFeatures] = useState([]);
-    // const [allFeatures, setAllFeatures] = useState([]);
+    const [showAll, setShowAll] = useState(false);
+
+    const seeAllJobs = () => {
+       setShowAll (true);
+    };
+
     useEffect(() => {
         const jobDatafetch = async() => {
             const res = await fetch('jobData.json');
             const json = await res.json();
-            const fourData = json.slice(0, 4)
-            setFeatures(fourData);
+            const fourData = json.slice(0, 4);
+            if (showAll) {
+                setFeatures (json);
+            }
+
+            else {
+                setFeatures (fourData)
+            }
         }
+        
         jobDatafetch()
-    },[])
+    },[seeAllJobs]);
+
+    
+
+
  
 
     return (
@@ -28,7 +45,9 @@ const FeatureJob = () => {
                     ) 
                 }
             </div>
-            <button className='btn w-40 border-0 mt-8  bg-gradient-to-r from-[#7E90FE] to-[#9873FF]'>See All Jobs</button>
+            {
+                showAll ? <button onClick={seeAllJobs} className='btn hidden w-40 border-0 mt-8  bg-gradient-to-r from-[#7E90FE] to-[#9873FF]'>See All Jobs</button> : <button onClick={seeAllJobs} className='btn w-40 border-0 mt-8  bg-gradient-to-r from-[#7E90FE] to-[#9873FF]'>See All Jobs</button>
+            }
         </div>
     );
 };

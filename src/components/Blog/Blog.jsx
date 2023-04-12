@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='mb-40'>
+        <div className=' mb-8 lg:mb-40'>
             <h1 className='mt-6 lg:mt-36 underline text-center font-bold text-xl text-orange-500'>Question & Answer</h1>
             <div className='mt-4 lg:mt-20 flex flex-col lg:flex-row mx-1 lg:mx-0 gap-2 lg:gap-10 justify-center'>
             <div className="card w-96 bg-neutral text-neutral-content">

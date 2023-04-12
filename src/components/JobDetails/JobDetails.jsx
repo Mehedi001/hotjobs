@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 const JobDetails = () => {
     const {id} = useParams();
-
     const [job, setJob] = useState([]);
     const {jobtitle, salary, phone, email, companyLocation, jobDescription, jobResponsibility, educationalRequirements, experiences, } = job;
 
@@ -12,6 +11,31 @@ const JobDetails = () => {
         .then (res => res.json())
         .then (data => setJob(data.find(d=> d.id==`${id}`)))
     },[]);
+
+    const applyJobs = id => {
+        let shoppingCart = getShoppingCart();
+        // add quantity
+        const quantity = shoppingCart[id];
+        if (!quantity) {
+            shoppingCart[id] = 1;
+        }
+        else {
+            const newQuantity = quantity + 1;
+            shoppingCart[id] = newQuantity;
+        }
+        localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+    };
+    const getShoppingCart = () => {
+        let shoppingCart = {};
+    
+        //get the shopping cart from local storage
+        const storedCart = localStorage.getItem('shopping-cart');
+        if (storedCart) {
+            shoppingCart = JSON.parse(storedCart);
+        }
+        return shoppingCart;
+    }
+
     return (
         <div>
             <h1 className='text-3xl font-bold text-center mt-20'>Job Details</h1>
@@ -32,10 +56,10 @@ const JobDetails = () => {
                     <p className='mt-3'><img className='inline-block' src="/src/assets/Icons/Frame-3.png" /><span className='font-bold'> Email:</span> {email}</p>
                     <p className='mt-3'><img className='inline-block' src="/src/assets/Icons/Frame-4.png" /><span className='font-bold'> Address:</span> {companyLocation}</p>
                     </div>
-                    <button className='btn w-full border-0 mt-4 rounded  bg-gradient-to-r from-[#7E90FE] to-[#9873FF]'>Apply Now</button>
+                    <button onClick={() => applyJobs(job.id)} className='btn w-full border-0 mt-4 rounded  bg-gradient-to-r from-[#7E90FE] to-[#9873FF]'>Apply Now</button>
                 </div>
             </div>
-        </div>
+        </div>      
     );
 };
 
