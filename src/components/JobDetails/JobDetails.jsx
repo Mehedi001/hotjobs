@@ -27,7 +27,7 @@ const JobDetails = () => {
                     <h1 className='mb-6 font-bold'>Job Details</h1> <hr />
                     <p className='mt-3'> <img className='inline-block' src="/src/assets/Icons/Frame.png" /> <span className='font-bold'>Salary:</span> {salary} (Per Month)</p>
                     <p className='mt-3'> <img className='inline-block' src="/src/assets/Icons/Frame-1.png" /> <span className='font-bold'>Job Title:</span> {jobtitle}</p>
-                    <h1 className='mb-6 mt-6'><span className='font-bold'>Job Details:</span></h1> <hr />
+                    <h1 className='mb-6 mt-6'><span className='font-bold'>Contact Information:</span></h1> <hr />
                     <p className='mt-3'><img className='inline-block' src="/src/assets/Icons/Frame-2.png" /><span className='font-bold'> phone:</span> {phone}</p>
                     <p className='mt-3'><img className='inline-block' src="/src/assets/Icons/Frame-3.png" /><span className='font-bold'> Email:</span> {email}</p>
                     <p className='mt-3'><img className='inline-block' src="/src/assets/Icons/Frame-4.png" /><span className='font-bold'> Address:</span> {companyLocation}</p>
