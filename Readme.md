@@ -1,7 +1,5 @@
 
-<!-- //**/
-* https://hotjobs.netlify.app/ -->
+* Live Link:[https://hotjobs.netlify.app/]
 
-*https://hotjobs.netlify.app/*
-
-this site for job searching , finding & applying. explore it
+this site for job searching , finding & applying. explore it.
+Thanks
